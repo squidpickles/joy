@@ -105,5 +105,6 @@ impl WebServer {
 
 pub fn main() {
     let server = WebServer::new().unwrap();
+    println!("Listening on {}", LISTEN_ADDR);
     server.run(LISTEN_ADDR).unwrap();
 }
