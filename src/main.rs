@@ -24,7 +24,7 @@ use hyper::client::Client;
 use std::collections::BTreeMap;
 
 const JOY_URL: &'static str = "https://raw.githubusercontent.com/squidpickles/slippybot/master/joy.json";
-const LISTEN_ADDR: &'static str = "127.0.0.1:4707";
+const LISTEN_ADDR: &'static str = "127.0.0.1:8707";
 const CACHE_TIMEOUT: u32 = 300; // seconds
 
 struct JoyHandler;
