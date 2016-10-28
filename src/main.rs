@@ -55,8 +55,10 @@ impl Handler for JoyHandler {
             Ok(jj) => jj,
             Err(err) => return Err(iron::IronError::new(err, status::InternalServerError))
         };
+        let mut vars = BTreeMap::new();
+        vars.insert("joy".to_owned(), joy);
         let now = time::now_utc();
-        resp.set_mut(Template::new("index", joy)).set_mut(status::Ok);
+        resp.set_mut(Template::new("index", vars)).set_mut(status::Ok);
         self.set_cache_headers(&mut resp, now);
         Ok(resp)
     }

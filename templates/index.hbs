@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Slippy's Joy List</title>
+	<title>Slippy&#8217;s Joy List</title>
 	<link rel="stylesheet" type="text/css" href="/stylesheet.css">
 	<meta name="viewport" content="width=420">
 </head>
 <body>
-<h1>The Joy List</h1>
-<ul>
-{{#each items}}
-	<li>{{this}}</li>
+<header>
+	<h1>Slippy&#8217;s Joy List</h1>
+	<p>Make Slippy Happy!</p>
+</header>
+{{#each joy}}
+<section>
+	<h2>{{@key}}</h2>
+	<ul>
+	{{#each this}}
+		<li>{{this}}</li>
+	{{/each}}
+	</ul>
+</section>
 {{/each}}
-</ul>
 </body>
 </html>
