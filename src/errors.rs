@@ -5,9 +5,9 @@ use serde_json;
 
 error_chain! {
      foreign_links {
-         io::Error, Io;
-         net::AddrParseError, Address;
-         hyper::Error, Hyper;
-         serde_json::Error, Json;
+         Io(io::Error);
+         Address(net::AddrParseError);
+         Hyper(hyper::Error);
+         Json(serde_json::Error);
      }
 }
